@@ -1,0 +1,19 @@
+:root {
+    --hue: 103;
+    --hueComplement: calc(var(--hue) + 180);
+    --hueRightAnalogous: calc(var(--hue) + 30);
+    --hueLeftAnalogous: calc(var(--hue) - 30);
+
+    --primary:hsl(var(--hue) 5% 5%);
+    --primaryLight1:hsl(var(--hue) 5% 10%);
+    --primaryLight2:hsl(var(--hue) 5% 20%);
+    --primaryLight3:hsl(var(--hue) 5% 30%);
+    --primaryLight4:hsl(var(--hue) 5% 40%);
+    
+    --secondary: hsl(var(--hueComplement) 5% 85%);
+    --secondaryDark1:hsl(var(--hueComplement) 5% 75%);
+    --secondaryDark2:hsl(var(--hueComplement) 5% 65%);
+    --secondaryDark2:hsl(var(--hueComplement) 5% 55%);
+    --secondaryDark2:hsl(var(--hueComplement) 5% 45%);
+    --accent:hsl(var(--hue) 86% 71% )
+}

@@ -1,0 +1,22 @@
+{% macro div(active='flir')  -%}
+    <div class="camera-wrapper">
+        <!-- <canvas id="frame-rgb"></canvas> -->
+        <!-- <canvas id="frame-flir"></canvas> -->
+        <div class="frame frame-rgb">
+            <div class="wait-camera">
+                <img  src="{{ url_for('video_rgb') }}"  class="wait-cam-img" alt="waiting for camera">
+                <p class="waiting-text">Waiting for the cameras</p>
+            </div>
+        </div>
+        <div class="frame frame-flir">
+            <div class="wait-camera">
+                <img src="{{ url_for('video_flir') }}" class="wait-cam-img" alt="waiting for camera">
+                <p class="waiting-text">Waiting for the cameras</p>
+            </div>
+        </div>
+        <div class="camera-thumbnail" onclick="sendMessage()">
+            <img src="{{ url_for('static', filename='image/cam-wait.png') }}" class="thumbnail" alt="waiting for camera">
+            <img src="{{ url_for('static', filename='image/cam-wait.png') }}" class="thumbnail" alt="waiting for camera"> 
+        </div>
+    </div>
+{% endmacro %}

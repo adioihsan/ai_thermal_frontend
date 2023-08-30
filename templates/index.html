@@ -1,0 +1,14 @@
+{% import 'pages/temperature.html' as temperature %}
+{% extends 'components/layout.html' %} {% block head %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/index.css') }}"
+/>
+<title>Home - Temperature</title>
+
+{% endblock %} 
+
+{% block content %}
+    {{ temperature.div() }}
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% import 'components/sidenav.html' as sidenav %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/reset.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/font.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/color.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/layout.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/components.css') }}"
+        />
+        <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/pages.css') }}"
+    />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+        {% block head %} {% endblock %}
+    </head>
+    <body>
+        <nav id="top-nav">
+            <div id="top-nav-left">
+                <button id="top-nav-btn" onclick="toggleSideNav()">
+                    <div class="burger-icon">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </div>
+                </button>
+                <div class="logo-text">AI-Thermometer</div>
+            </div>
+            <div id="top-nav-right"></div>
+        </nav>
+        <div class="wrapper">
+            <div id="left-wrapper">
+                {{ sidenav.nav('mesurement ') }}
+            </div>
+            <div class="container">{% block content %} {% endblock %}</div>
+        </div>
+        {% block javascript %}
+        <script
+            type="text/javascript"
+            src="{{ url_for('static', filename='js/layout.js') }}"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/socketConnection.js') }}" charset="utf-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="{{ url_for('static', filename='js/jquery-3.7.0.min.js') }}" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename='js/chartResult.js') }}" charset="utf-8"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+        <script src="{{ url_for('static', filename='js/table.js') }}" charset="utf-8"></script>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,12 @@
+.content {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    gap: 2rem;
+}
+
+.page-temperature{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+}

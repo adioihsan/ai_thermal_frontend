@@ -1,0 +1,12 @@
+{% import 'components/camera.html' as camera %}
+{% import 'components/profile.html' as profile %}
+{%macro div() -%}
+<div class="page-temperature">
+    {{ camera.div() }}
+    {{ profile.div() }}
+    <div class="chart-result">
+        <canvas id="face-tempt"></canvas>
+        <canvas id="forhead-tempt"></canvas>
+    </div>
+</div>
+{%endmacro%}
